@@ -48,7 +48,7 @@ export default function Home() {
 					<ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer" />
 
 					{/* Avatar */}
-					<Avatar url="https://github.com/rafiousitou90.png" />
+					<Avatar url="https://www.github.com/rafiousitou90.png" />
 				</div>
 			</header>
 
@@ -74,7 +74,7 @@ export default function Home() {
 						Google Search
 					</button>
 					<button className="btn" type="button">
-						I'm Feeling Lucky
+						{`I'm Feeling Lucky`}
 					</button>
 				</div>
 			</form>

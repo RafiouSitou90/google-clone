@@ -61,10 +61,12 @@ const Header = () => {
 					</button>
 				</form>
 
-				<Avatar
-					className="ml-auto"
-					url="https://github.com/rafiousitou90.png"
-				/>
+				<div className="ml-auto">
+					<Avatar
+						url="https://www.github.com/rafiousitou90.png"
+						// className="ml-auto"
+					/>
+				</div>
 			</div>
 
 			{/* Header Options */}

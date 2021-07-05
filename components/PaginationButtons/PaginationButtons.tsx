@@ -4,7 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 
 interface PaginationButtonsProps {}
 
-const PaginationButtons = ({}: any) => {
+const PaginationButtons = ({}: PaginationButtonsProps) => {
 	const router = useRouter()
 	const { start, term } = router.query
 
