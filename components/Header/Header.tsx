@@ -9,7 +9,7 @@ import HeaderOptions from '../HeaderOptions'
 const Header = () => {
 	const router = useRouter()
 	const searchInputRef = useRef<HTMLInputElement>(null)
-	// const { term } = router.query
+	const { term } = router.query
 
 	function clearInput() {
 		if (searchInputRef.current) {
@@ -45,7 +45,7 @@ const Header = () => {
 						className="flex-grow w-full focus:outline-none"
 						ref={searchInputRef}
 						type="text"
-						// defaultValue={term}
+						defaultValue={term}
 					/>
 
 					<XIcon
