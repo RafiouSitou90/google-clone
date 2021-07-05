@@ -3,13 +3,26 @@ import {
 	ViewGridIcon,
 	MicrophoneIcon,
 } from '@heroicons/react/solid'
+import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react'
+import React, { FormEvent, useRef } from 'react'
 import { Avatar, Footer } from '../components'
 import logo from '../public/logo.png'
 
 export default function Home() {
+	const router = useRouter()
+	const searchInputRef = useRef<HTMLInputElement>(null)
+
+	const search = (event: FormEvent) => {
+		event.preventDefault()
+		const term = searchInputRef.current?.value
+
+		if (!term) return
+
+		router.push(`/search?term=${term}`)
+	}
+
 	return (
 		<div className="flex flex-col items-center justify-center h-screen">
 			<Head>
@@ -42,6 +55,7 @@ export default function Home() {
 			{/* <div className="flex flex-col items-center mt-20 flex-grow"> */}
 			<form
 				action="#"
+				onSubmit={search}
 				className="flex flex-col items-center mt-20 flex-grow w-4/5"
 			>
 				<Image src={logo} width={300} height={100} />
@@ -50,12 +64,13 @@ export default function Home() {
 					<input
 						type="text"
 						className="flex-grow focus:outline-none"
+						ref={searchInputRef}
 					/>
 					<MicrophoneIcon className="h-5 text-gray-500 cursor-pointer ml-3" />
 				</div>
 
 				<div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
-					<button className="btn" type="button">
+					<button className="btn" type="submit">
 						Google Search
 					</button>
 					<button className="btn" type="button">
